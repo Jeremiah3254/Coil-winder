@@ -1,0 +1,368 @@
+{
+  "version": 1,
+  "author": "UToledo coil winder team",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-mega",
+      "id": "mega",
+      "top": 250,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "drvS",
+      "top": 60,
+      "left": 40,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "motS",
+      "top": -140,
+      "left": 20,
+      "attrs": {
+        "size": "17",
+        "display": "angle",
+        "arrow": "orange"
+      }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "drvT",
+      "top": 60,
+      "left": 220,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "motT",
+      "top": -140,
+      "left": 200,
+      "attrs": {
+        "size": "17",
+        "display": "steps"
+      }
+    },
+    {
+      "type": "wokwi-ky-040",
+      "id": "enc",
+      "top": 240,
+      "left": 520,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "home",
+      "top": 330,
+      "left": 520,
+      "attrs": {
+        "color": "green",
+        "label": "HOME switch (H)",
+        "key": "h",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "end",
+      "top": 400,
+      "left": 520,
+      "attrs": {
+        "color": "yellow",
+        "label": "END switch (J)",
+        "key": "j",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "estop",
+      "top": 470,
+      "left": 520,
+      "attrs": {
+        "color": "red",
+        "label": "E-STOP (E)",
+        "key": "e",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "t1",
+      "top": -170,
+      "left": 30,
+      "attrs": {
+        "text": "Spindle"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "t2",
+      "top": -170,
+      "left": 210,
+      "attrs": {
+        "text": "Traverse"
+      }
+    },
+    {
+      "type": "wokwi-ssd1306",
+      "id": "oled",
+      "top": 150,
+      "left": 780,
+      "attrs": {
+        "i2cAddress": "0x3c"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "t3",
+      "top": 125,
+      "left": 760,
+      "attrs": {
+        "text": "Display (stands in for the Nokia 5110)"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "drvS:STEP",
+      "mega:22",
+      "green",
+      []
+    ],
+    [
+      "drvS:DIR",
+      "mega:23",
+      "blue",
+      []
+    ],
+    [
+      "drvS:ENABLE",
+      "mega:24",
+      "gray",
+      []
+    ],
+    [
+      "drvS:MS1",
+      "mega:5V",
+      "red",
+      []
+    ],
+    [
+      "drvS:MS2",
+      "mega:5V",
+      "red",
+      []
+    ],
+    [
+      "drvS:RESET",
+      "drvS:SLEEP",
+      "black",
+      []
+    ],
+    [
+      "drvS:VDD",
+      "mega:5V",
+      "red",
+      []
+    ],
+    [
+      "drvS:GND",
+      "mega:GND.2",
+      "black",
+      []
+    ],
+    [
+      "drvS:1B",
+      "motS:B-",
+      "black",
+      []
+    ],
+    [
+      "drvS:1A",
+      "motS:B+",
+      "black",
+      []
+    ],
+    [
+      "drvS:2A",
+      "motS:A+",
+      "black",
+      []
+    ],
+    [
+      "drvS:2B",
+      "motS:A-",
+      "black",
+      []
+    ],
+    [
+      "drvT:STEP",
+      "mega:25",
+      "green",
+      []
+    ],
+    [
+      "drvT:DIR",
+      "mega:26",
+      "blue",
+      []
+    ],
+    [
+      "drvT:ENABLE",
+      "mega:24",
+      "gray",
+      []
+    ],
+    [
+      "drvT:MS1",
+      "mega:5V",
+      "red",
+      []
+    ],
+    [
+      "drvT:MS2",
+      "mega:5V",
+      "red",
+      []
+    ],
+    [
+      "drvT:RESET",
+      "drvT:SLEEP",
+      "black",
+      []
+    ],
+    [
+      "drvT:VDD",
+      "mega:5V",
+      "red",
+      []
+    ],
+    [
+      "drvT:GND",
+      "mega:GND.2",
+      "black",
+      []
+    ],
+    [
+      "drvT:1B",
+      "motT:B-",
+      "black",
+      []
+    ],
+    [
+      "drvT:1A",
+      "motT:B+",
+      "black",
+      []
+    ],
+    [
+      "drvT:2A",
+      "motT:A+",
+      "black",
+      []
+    ],
+    [
+      "drvT:2B",
+      "motT:A-",
+      "black",
+      []
+    ],
+    [
+      "enc:CLK",
+      "mega:30",
+      "green",
+      []
+    ],
+    [
+      "enc:DT",
+      "mega:31",
+      "green",
+      []
+    ],
+    [
+      "enc:SW",
+      "mega:32",
+      "green",
+      []
+    ],
+    [
+      "enc:VCC",
+      "mega:5V",
+      "red",
+      []
+    ],
+    [
+      "enc:GND",
+      "mega:GND.3",
+      "black",
+      []
+    ],
+    [
+      "home:1.l",
+      "mega:2",
+      "orange",
+      []
+    ],
+    [
+      "home:2.l",
+      "mega:GND.4",
+      "black",
+      []
+    ],
+    [
+      "end:1.l",
+      "mega:3",
+      "orange",
+      []
+    ],
+    [
+      "end:2.l",
+      "mega:GND.4",
+      "black",
+      []
+    ],
+    [
+      "estop:1.l",
+      "mega:18",
+      "orange",
+      []
+    ],
+    [
+      "estop:2.l",
+      "mega:GND.4",
+      "black",
+      []
+    ],
+    [
+      "oled:DATA",
+      "mega:20",
+      "violet",
+      []
+    ],
+    [
+      "oled:CLK",
+      "mega:21",
+      "violet",
+      []
+    ],
+    [
+      "oled:VIN",
+      "mega:5V",
+      "red",
+      []
+    ],
+    [
+      "oled:GND",
+      "mega:GND.1",
+      "black",
+      []
+    ]
+  ],
+  "serialMonitor": {
+    "display": "always",
+    "newline": "lf"
+  }
+}

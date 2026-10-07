@@ -1,0 +1,8 @@
+# wokwi.toml — Wokwi for VS Code. Lives in the top Coil-winder folder, next to README.md.
+# The firmware files are made by Arduino IDE: Sketch > Export Compiled Binary.
+[wokwi]
+version = 1
+firmware = 'firmware/CoilWinder/build/arduino.avr.mega/CoilWinder.ino.hex'
+elf = 'firmware/CoilWinder/build/arduino.avr.mega/CoilWinder.ino.elf'
+# Optional: lets the control app connect to the simulated Mega at rfc2217://localhost:4000
+rfc2217ServerPort = 4000

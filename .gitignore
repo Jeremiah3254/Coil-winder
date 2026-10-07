@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+app/runs/
+.DS_Store
+Thumbs.db
+firmware/CoilWinder/build/
