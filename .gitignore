@@ -5,3 +5,4 @@ app/runs/
 .DS_Store
 Thumbs.db
 firmware/CoilWinder/build/
+*.exe
